@@ -1,0 +1,3 @@
+INDEX VERSION 1.130+C:\Users\DGCOM\eclipse-workspace\WebCrawlingServer\À¥ÆÄ½Ì\.metadata\.plugins\org.eclipse.jdt.core
+3017952843.index
+421152755.index
