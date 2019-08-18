@@ -34,8 +34,8 @@ public class foodparsing {
 				}
 				else {
 					String rday= String.format("%02d",Integer.parseInt(dae) );
-					System.out.println("2018-03-"+String.format("%02d",Integer.parseInt(dae) )+"/"+menu);
-					String sql = "insert FOOD  values('2018-03-"+rday+"','"+menu+"') ON DUPLICATE KEY UPDATE foodCont='"+ menu+"';";
+					System.out.println("2018-10-"+String.format("%02d",Integer.parseInt(dae) )+"/"+menu);
+					String sql = "insert FOOD  values('2018-10-"+rday+"','"+menu+"') ON DUPLICATE KEY UPDATE foodCont='"+ menu+"';";
 					stmt.executeUpdate(sql);
 
 				}

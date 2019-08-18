@@ -23,11 +23,11 @@ private final static String address = "http://www.kyeongbuk.hs.kr/board/list.do?
 				String alertNum=null;
 				for(int j=1; j<10;j++) {
 					Document doc = Jsoup.connect(address+j).get();
-					for(int i=1;i<24;i++) {
+					for(int i=1;i<13;i++) {
 						Elements elt = doc.getElementsByTag("tr").eq(i);
 						String alertHref = elt.select("a[href]").toString();
 						String splitHref = alertHref.split("Sid=")[1].split("\"")[0];
-						System.out.println(splitHref);
+						
 						for(int w=0; w<5; w++) {
 							String eelt = elt.select("td").eq(w).text();
 							
@@ -56,7 +56,7 @@ private final static String address = "http://www.kyeongbuk.hs.kr/board/list.do?
 					String sql = "insert ALERT  values('"+alertnum+"','"+alertCont+"','"+alertName+"','"+alertDate+"','"+alertSeeview+"','"+splitHref+"') ON DUPLICATE KEY UPDATE alertSeeview='"+ alertSeeview+"';";
 					System.out.println(sql);
 					stmt.executeUpdate(sql);
-					System.out.println(alertNum + alertCont+ alertName+ alertDate+alertSeeview);}
+					System.out.println(alertNum + alertCont+ alertName+ alertDate+alertSeeview+splitHref);}
 					}
 				}
 				conn.close();
